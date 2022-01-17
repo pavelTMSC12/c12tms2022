@@ -1,12 +1,25 @@
 public class HomeWork {
     public static void main(String[] args) {
+        //вывод на консоль
+        printLiterals();
         //Некоторые тесты для проверки задач.
         System.out.println(sum(100, 200));
         System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
         System.out.println(max(56, 349));
-        System.out.println(average(new int[]{0, -2, 3, -1, 5}));
-        System.out.println(max(new int[]{1, 2, 3, 4, 5, 100, 99}));
-        System.out.println(calculateHypotenuse(3,4));
+        System.out.println(calculateHypotenuse(3, 4));
+    }
+
+    private static void printLiterals() {
+//        вывести на консоль литералы следующих видов:
+//        логический
+//        строковый
+//        символьный
+//        целочисленный 2-й
+//        целочисленный 8-й
+//        целочисленный 10-й
+//        целочисленный 16-й
+//        литерал типа float
+//        литерал типа double.
     }
 
     /**
@@ -18,7 +31,6 @@ public class HomeWork {
     }
 
     /**
-     *
      * Метод должен вернуть максимальное значение из двух чисел
      *
      * <p>
@@ -38,27 +50,8 @@ public class HomeWork {
     }
 
     /**
-     * Метод должен вернуть среднее значение из массива чисел
-     * (необходимо сумму всех элеменов массива разделить на длину массива)
-     * <p>
-     * Example:
-     * array = {1,2,3,4,5}
-     * Метод должен return 3.0
-     */
-    public static double average(int[] array) {
-        return 0;
-    }
-
-    /**
-     * Метод должен вернуть максимальый элемент массива. Пример: array = {1,2,10,3} метод возвращает 10
-     **/
-    public static int max(int[] array) {
-        return 0;
-    }
-
-    /**
      * Используя теорему Пифагора, вычислите значение гипотенузы. Квадрат гипотенузы = сумме квадратов катетов
-     *
+     * <p>
      * Example1:
      * 3
      * 4
