@@ -3,5 +3,7 @@ public class Test {
         System.out.println("sdsd");
         System.out.println("sdsd");
         System.out.println("sdsd");
+
+        int g = 0;
     }
 }
