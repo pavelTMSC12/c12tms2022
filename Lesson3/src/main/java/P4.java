@@ -12,19 +12,21 @@ public class P4 {
      * 4) иначе все операнды операции преобразуются к типу int
      **/
     public static void main(String[] args) {
-        myPrint(1 + 1f);//
-        myPrint(2L + 1f);//
-        myPrint(3 + 1L);//
-        myPrint(4f + 1.0);//
-        myPrint((byte) 1 + 5);//
-        byte x = 5;//рассказать про правило оформления кода!
+        myPrint(1 + 1f);//float
+        myPrint(2L + 1f);//float
+        myPrint(3 + 1L);//long
+        myPrint(4f + 1.0);//double
+        myPrint((byte) 1 + 5);//int
+        myPrint((byte) 5 + 13L);//long
         long l = 13;
-        myPrint((byte) 5 + 13L);//
-        myPrint(x + l);//
-        myPrint((byte) 2 + (short) 5);//
-        myPrint(5.5 + (int) 3);//
-        myPrint((char) 'a' + 5);//
-        myPrint(4.3f, "abc");//
+        byte x = 5;//рассказать про правило оформления кода!
+        myPrint(x + l);//long
+        myPrint((byte) 2 + (short) 5);//int
+        myPrint(5.5 + (int) 3);// double
+        myPrint((char) 'a' + 5);//int
+
+
+        myPrint(4.3f, "abc");//float
         System.out.println(myPrint("abc", 4.3f));//
     }
 

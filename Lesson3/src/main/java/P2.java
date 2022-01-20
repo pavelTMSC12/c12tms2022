@@ -1,9 +1,24 @@
 public class P2 {
     public static void main(String[] args) {
+        {
+            //        int d;
+            int d = 1;
+            int res = d + 3;
+            System.out.println(d);
+            System.out.println(res);
+        }
+
         //вопрос!
-        String Chis, CHIS, cHIS = "123";
+        String Chis, CHIS, cHIS, chis = "123";
+
         {
             int a = 4;
+            byte b = (byte) a;  // преобразование типов: от типа int к типу byte
+            System.out.println(b); // 4
+        }
+
+        {
+            int a = 6;
             byte b = (byte) a;  // преобразование типов: от типа int к типу byte
             System.out.println(b); // 4
         }
@@ -32,8 +47,17 @@ public class P2 {
 
             {
                 int a = 258;
-                byte b = (byte) a;
+                byte b = (byte) a; //-128 ... 0  1 2 ... 127
                 System.out.println(b);
+
+                long r = Integer.MAX_VALUE;
+                System.out.println((long) r + 1);
+
+
+                byte kk = (byte) 128;
+                System.out.println(kk);
+
+//                System.out.println((byte)kk + (byte)1);
             }
         }
     }
