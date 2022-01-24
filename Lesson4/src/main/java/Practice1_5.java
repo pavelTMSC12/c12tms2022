@@ -11,13 +11,35 @@ public class Practice1_5 {
 //        byte number = 2;
 //        switch (number) {
 //            case 13:
-//            case 13:
+////            case 13:
 //            case 129:
 //        }
 
-        int monthIndex = 0;
-        //switch
-        switchExample(monthIndex);
+
+        one:
+        //именнованый блок
+        {
+            System.out.println("start of one");
+            two:
+            {
+                System.out.println("start of two");
+                three:
+                {
+                    System.out.println("start of three");
+                    if (true) {
+                        break three;
+                    }
+                    System.out.println("end of three");
+                }
+                System.out.println("end of two");
+            }
+            System.out.println("end of one");
+        }
+
+
+//        int monthIndex = 0;
+//        //switch
+//        switchExample(monthIndex);
 /*
 Выражение в switch должно иметь тип char, byte, short, int, enum (начиная с Java 6) или String(начиная с Java 7).
 Использование любого другого типа, например float, приведет к ошибке компиляции.

@@ -74,7 +74,7 @@ public class HomeWork {
 
 //    public static void main(String[] args) {
 //        System.out.println("    byte short char int long float double boolean");
-//        System.out.println("byte  т    я    ня   ня   ня   ня    ня      х");
+//        System.out.println("byte  т    ня    я   ня   ня   ня    ня      х");
 //        System.out.println("short я    т     я   ня   ня   ня    ня      х");
 //        System.out.println("char  я    я     т   ня   ня   ня    ня      х");
 //        System.out.println("int   я    я     я   т    ня   ня    ня      х");

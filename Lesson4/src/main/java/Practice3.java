@@ -12,14 +12,16 @@ public class Practice3 {
 //            return;
 //        }
 
+
 //        System.out.println("123");
 
-//        for (int i = 0; i < 10; i++) {
-//            for (int j = 0; j < 10; j++) {
-//                System.out.print(i + " " +j+",");
-//            }
-//            return;
-//        }
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(i + " " + j + ",");
+//                break;
+            }
+            return;
+        }
 
         String str = smth();
         if (str != null) {

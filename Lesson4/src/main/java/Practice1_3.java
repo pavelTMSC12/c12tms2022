@@ -44,10 +44,14 @@ public class Practice1_3 {
         System.out.println("Добро пожаловать в кафе, что будете?");
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("лате (нажми 1)");
-            System.out.println("капучино (нажми 2)");
-            System.out.println("выход (нажми 3)");
-            s = scanner.nextInt();
+            do {
+                menu();
+                if (scanner.hasNextInt()) {
+                    s = scanner.nextInt();
+                } else {
+                    scanner.next();
+                }
+            } while (!(s >= 1 && s <= 3));
             System.out.println("Спасибо за выбор");
             switch (s) {
                 case 1:
@@ -59,5 +63,11 @@ public class Practice1_3 {
             }
             System.out.println("Что то еще?");
         } while (s != 3); //выйдет из цикла когда false
+    }
+
+    private static void menu() {
+        System.out.println("лате (нажми 1)");
+        System.out.println("капучино (нажми 2)");
+        System.out.println("выход (нажми 3)");
     }
 }

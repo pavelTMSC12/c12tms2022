@@ -11,35 +11,52 @@ public class Practice1_0 {
 ////            //тело цикла
 ////        }
 //
-////        int[] mass = new int[3000];
-////        //Данные конструкции эквивалентны
-////        boolean b = true;
+        int[] mass = new int[3000];
+        //Данные конструкции эквивалентны
+        boolean b = true;
 ////
-////        for (int i = 0; i < mass.length && b; i += 3) { //i=i+3
-////            System.out.println("1");
-////            if (i == 3) {
-////                b = false;
-////            }
-////        }
-////        for (int i = 0; i < mass.length; i++) {
-////            System.out.println("1");
-////        }
-////        for (int i = 0; i < mass.length; ++i) {
-////            System.out.println("1");
-////        }
-////        for (int i = 0; i < mass.length; i = i + 1) {
-////            System.out.println("1");
-////        }
+        for (int i = 0; i < mass.length && b; i += 3) { //i=i+3
+            System.out.println("1");
+            if (i == 3) {
+                b = false;
+            }
+        }
+//        for (int i = 0; i < mass.length; i++) {
+//            System.out.println("1");
+//        }
+//        for (int i = 0; i < mass.length; ++i) {
+//            System.out.println("1");
+//        }
+//        for (int i = 0; i < 3000; i++) {
+//        //логика
+//        }
+
+//        for (int i = 0; i < mass.length; i++) {
+//            System.out.println("1");
+//        }
 //
 //
-////        for (int i = 0; i < 10; i -= 2) {//i -=2  что будет?
-////            System.out.print(i + " ");
-////        }
+//        for (int i = 0; i < 10; i -= 2) {//i -=2  что будет?
+//            System.out.print(i + " ");
+////            break;
+//        }
+
+
+//        for (; ;) {
+//
+//        }
+
+
 //бесконечный цикл и выход из него
 //        for (; ;) {
 //
 //        }
 //
+
+        for (int pp = 0; pp < 10; pp++) {
+            System.out.print(pp + " ");
+        }
+
         int pp = 0;
         for (; ; ) {
             System.out.print(pp + " ");
@@ -54,6 +71,21 @@ public class Practice1_0 {
         }
 //------------------------------------------------------------------------------------------
 //        Задача: используюя for вывести от 0 до 100 которые делятся нацело на 5 (оптимальное обновление нужно)
+
+        for (int i = 5; i <= 100; i++) {
+            if (i % 5 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+//        for (int i = 0; i <= 100; i++) {
+//            System.out.print(i + " ");
+//        }
+        System.out.println();
+        for (int i = 5; i <= 100; i += 5) {
+            System.out.print(i + " ");
+        }
+
 
         /*
 //        for (int ii = 0; ii <= 100; ii += 5) {
