@@ -7,6 +7,9 @@ public class Practice1_1 {
 //            System.out.println("1");
 //        }
 
+        //Задача
+        //найти середину между i = 100 и j = 200 с помощью while
+
         int l = 0;
         while (l <= 100) { //если условие false то не будет ни одной итерации
             System.out.println(l++);

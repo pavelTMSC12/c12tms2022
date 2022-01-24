@@ -3,6 +3,9 @@ public class Practice3 {
         //операторы перехода
         //break; continue; return
 
+        double randomValue = getRandomValue(5);
+        System.out.println(randomValue);
+
 //        return прекращает действие не зависимо от того в цикле или в методе
 //        if (true) {
 //            System.out.println("true");
@@ -70,6 +73,10 @@ public class Practice3 {
         calculation();
         System.out.println("Done!");
 
+    }
+
+    public static double getRandomValue(int i) {
+        return Math.random() * i;
     }
 
     private static void calculation() {
