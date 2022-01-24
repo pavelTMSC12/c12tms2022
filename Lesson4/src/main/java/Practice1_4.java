@@ -1,5 +1,5 @@
 //https://metanit.com/java/tutorial/2.6.php
-public class Practice12 {
+public class Practice1_4 {
     public static void main(String[] args) {
         //поговорим про операторы ветвления
         boolean condition = true || 500 > 100;
@@ -19,6 +19,7 @@ public class Practice12 {
             System.out.println("condition is false");
         }
         int monthIndex = 0;
+        //switch
         switchExample(monthIndex);
 
     }
