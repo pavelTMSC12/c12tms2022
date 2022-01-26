@@ -11,6 +11,8 @@ public class HomeWork {
 
     private static void printLiterals() {
 //        вывести на консоль литералы следующих видов:
+        char c = 'a';
+        System.out.println(c);
 //        логический
 //        строковый
 //        символьный
@@ -27,7 +29,10 @@ public class HomeWork {
      * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
      **/
     public static int sum(int a, int b) {
-        return 0;
+        if ((long) a + b > Integer.MAX_VALUE) {
+            return -1;
+        }
+        return a + b;
     }
 
     /**
@@ -46,7 +51,10 @@ public class HomeWork {
      * Метод должен вернуть 10
      */
     public static int max(int a, int b) {
-        return 0;
+        if (a >= b) {
+            return a;
+        }
+        return b;
     }
 
     /**
@@ -63,6 +71,7 @@ public class HomeWork {
      * return 20
      */
     public static double calculateHypotenuse(int a, int b) {
-        return 0;
+//        return Math.sqrt(a * a + b * b);
+        return Math.hypot(a, b);
     }
 }

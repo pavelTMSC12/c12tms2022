@@ -1,7 +1,89 @@
+import java.util.Random;
+
 public class HomeWork {
 
     //Задачи:
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
+    public static void main(String[] args) {
+//        char ch = 'a';
+//        char m = 12;//16 бит [0; 65536]
+////        System.out.println((char) 0);
+//        for (char i = 'a'; i <= 'z'; i++) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println();
+//        printEnglishLetters('A');
+//
+//
+//
+//        Scanner scanner = new Scanner(System.in);
+//        if (scanner.hasNextInt()) {
+//            int value = scanner.nextInt();
+//            if (value % 2 == 0) {
+//                System.out.println("четное");
+//            } else {
+//                System.out.println("не четное");
+//            }
+//        } else {
+//            System.out.println("ошибка");
+//        }
+//
+////        Scanner scanner = new Scanner(System.in);
+//        double a = scanner.nextDouble();
+//        double b = scanner.nextDouble();
+//        double c = scanner.nextDouble();
+//        if (a < 0) {
+////            a = a * -1;
+//            a = -a;
+//            System.out.println(a);
+//        }
+//
+//        double absA = Math.abs(a);
+//        double absB = Math.abs(b);
+//        double absC = Math.abs(c);
+////        double result = min(absA, absB);
+//        System.out.println(Math.min(Math.min(absA, absB), absC));
+//
+//        //4
+////        [0;28800]
+        Random random = new Random();
+        System.out.println(random.nextInt());
+//        [-10 10]
+        System.out.println(random.nextInt(21) - 10);
+//        System.out.println("Random value " +value);
+//        display(value);
+        max(null);
+    }
+
+    private static void display(int value) {
+        int hour = value / 60 / 60;
+        String result = "";
+        switch (hour) {
+            case 0:
+                result = "менее часа";
+                break;
+            case 1:
+                result = "час";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                result = "часа";
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                result = "часов";
+                break;
+        }
+        System.out.println("осталось " + (hour == 0 ? "" : hour) + " " + result);
+    }
+
+    private static double min(double absA, double absB) {
+        return absA < absB ? absA : absB;
+    }
+
 
     //2)Проверка четности числа
     //Создать программу, которая будет сообщать, является ли целое число, введённое пользователем,
@@ -50,19 +132,33 @@ public class HomeWork {
      * Метод должен return 3.0
      */
     public static double average(int[] array) {
-        return 0;
+        double count = 0;
+        for (int value : array) {
+            count = count + value;
+        }
+        return count / array.length;
     }
 
     /**
      * 7) Метод должен вернуть максимальый элемент массива. Пример: array = {1,2,10,3} метод возвращает 10
      **/
     public static int max(int[] array) {
-        return 0;
+        if (array != null) {
+            int max = Integer.MIN_VALUE;
+            for (int value : array) {
+                if (value > max) {
+                    max = value;
+                }
+            }
+            return max;
+        } else {
+            return Integer.MIN_VALUE;
+        }
     }
 
-    public static void main(String[] args) {
-        printEnglishLetters('A');
-    }
+//    public static void main(String[] args) {
+//        printEnglishLetters('A');
+//    }
 
     private static char printEnglishLetters(char value) {
         System.out.print(value + " ");
@@ -72,7 +168,9 @@ public class HomeWork {
         return printEnglishLetters(++value);
     }
 
-//    public static void main(String[] args) {
+    public static void main1(String[] args) {
+        byte b = 1;
+        char c = (char) b;
 //        System.out.println("    byte short char int long float double boolean");
 //        System.out.println("byte  т    ня    я   ня   ня   ня    ня      х");
 //        System.out.println("short я    т     я   ня   ня   ня    ня      х");
@@ -82,5 +180,5 @@ public class HomeWork {
 //        System.out.println("float я    я     я   я    я    т     ня      х");
 //        System.out.println("double я   я     я   я    я    я     т       х");
 //        System.out.println("boolean х  х     х   х    х    х     х       т");
-//    }
+    }
 }
