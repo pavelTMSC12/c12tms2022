@@ -40,29 +40,40 @@ public class Practice1_3 {
 //        }
 
 
-        int s = 0;
+        int value = 0;
         System.out.println("Добро пожаловать в кафе, что будете?");
         Scanner scanner = new Scanner(System.in);
-        do {
-            do {
-                menu();
-                if (scanner.hasNextInt()) {
-                    s = scanner.nextInt();
-                } else {
-                    scanner.next();
+        boolean exist = true;
+        while (exist) {
+            value = getEnteredValueFromConsole(scanner);
+            if (exist = value != 3) {
+                System.out.println("Спасибо за выбор");
+                switch (value) {
+                    case 1:
+                        System.out.println("Лате готово");
+                        break;
+                    case 2:
+                        System.out.println("Капучино готово");
+                        break;
                 }
-            } while (!(s >= 1 && s <= 3));
-            System.out.println("Спасибо за выбор");
-            switch (s) {
-                case 1:
-                    System.out.println("Лате готово");
-                    break;
-                case 2:
-                    System.out.println("Капучино готово");
-                    break;
+                System.out.println("Что то еще?");
+            } else {
+                System.out.println("До свидания! Будем рады Вас видеть еще.");
             }
-            System.out.println("Что то еще?");
-        } while (s != 3); //выйдет из цикла когда false
+        }
+    }
+
+    private static int getEnteredValueFromConsole(Scanner scanner) {
+        int value = 0;
+        do {
+            menu();
+            if (scanner.hasNextInt()) {
+                value = scanner.nextInt();
+            } else {
+                scanner.next();
+            }
+        } while (value < 1 || value > 3);
+        return value;
     }
 
     private static void menu() {

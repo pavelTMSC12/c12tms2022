@@ -28,7 +28,7 @@ public class Practice1_1 {
         //найти середину между i = 100 и j = 200 с помощью while
         int i = 100;
         int j = 200;
-        while (++i < --j) {
+        while (!(++i == --j)) {
 //            i++;
 //            j--;
         }
