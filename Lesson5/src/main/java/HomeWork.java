@@ -1,9 +1,19 @@
+import java.util.Arrays;
+import java.util.Random;
+
 public class HomeWork {
     public static void main(String[] args) {
         calculateSumOfDiagonalElements();
         printMatrix();
     }
 //        Задачи:
+
+    //2 3
+    //-2 3
+    //2 -3
+    //-3 -2
+    //0 2
+    //3 0
 
 //        1) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
@@ -57,6 +67,19 @@ public class HomeWork {
      */
     public static void calculateSumOfDiagonalElements() {
         //пишем логику и выводим результат используя System.out.println
+        int[][] ints = new int[10][10];
+        Random random = new Random();
+        for (int[] anInt : ints) {
+            Arrays.setAll(anInt, value -> random.nextInt(1000));
+        }
+        int summ = 0;
+        for (int i = 0; i < ints.length; i++) {
+            summ += ints[i][i];
+        }
+        for (int[] anInt : ints) {
+            System.out.println(Arrays.toString(anInt));
+        }
+        System.out.println(summ);
     }
 
 
