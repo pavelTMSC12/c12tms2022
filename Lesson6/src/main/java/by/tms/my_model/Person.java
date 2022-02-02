@@ -4,12 +4,16 @@ public class Person {
     private String name; //характиристики, свойства
     private int age;
 
-    public Person() {//конструктор
+    private Person() {//конструктор
         System.out.println(name + age);
     }
 
+    public void test() {
+        print();
+    }
+
     //методы по работе с Person
-    void print() {
+    private void print() {
         System.out.println(name + age);
     }
 }

@@ -5,10 +5,12 @@ import java.util.Arrays;
 public class Example {
     public static void main(String[] args) {
         System.out.println(getVal());
-        getValue();
-        getValue(1, 3, 4, 5);
+//        getValue();
+        getValue(1, true, false, true);
+//        getValue(1);
 
-        getValueMass(new int[]{1, 2, 3, 5});
+//        int[] ints = {1, 2, 3, 5};
+        getValue(1, 2, 34, 4);
 
         getValue(12, true);
     }
@@ -26,7 +28,7 @@ public class Example {
         System.out.println(Arrays.toString(args));
     }
 
-//    static void getValue(int... args, boolean... b) {
+//    static void getValue(int... args, boolean b) {
 //
 //    }
 

@@ -1,7 +1,6 @@
 package by.tms.service;
 
 import by.tms.my_model.Car;
-import by.tms.my_model.Person;
 import by.tms.utils.Constants;
 
 import static by.tms.utils.Constants.MIN_AGE;
@@ -39,17 +38,17 @@ public class Main {
 //        car3.setColor("красный");
 
         System.out.println(car);
-        p2.Car car1 = new p2.Car("бмв", "красный");
+        p2.Car car1 = new p2.Car("бмв", "красный", "двс");
 
 //        car.name = "бмв";
 //        person.age = 34;
 //        person.name = "Ivan";
 //        System.out.println("Возраст " + person.age);//0
 //        System.out.println("Имя" + person.name);
-        Person person = new Person();
-        Person p1 = new Person();
-        System.out.println(person);
-        System.out.println(p1);
+//        Person person = new Person();
+//        Person p1 = new Person();
+//        System.out.println(person);
+//        System.out.println(p1);
         test();
 //        summ2(5, 6);
     }

@@ -11,7 +11,10 @@ public class Person {
     private int age;
     //enum is definitely the better option here
     private String sex = FEMALE;
+    //    private String country;
     private Address address;
+    private Random random = new Random();
+//    Random random = new Random();
 
     public void setName(String name) {
         if (age > 18) {
@@ -19,6 +22,14 @@ public class Person {
         } else {
             System.out.println("когда 18 будет приходите");
         }
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getSex() {
@@ -33,15 +44,19 @@ public class Person {
         System.out.println("Дефолтный конструктор");
     }
 
-//    public Person(Address myAddress, int age, String name, String sex) {
-//        this(age, name);
-//        this.address = myAddress;
-////        this.name = name;
-////        this.age = age;
-//        if (MALE.equals(sex) || FEMALE.equals(sex)) {
-//            this.sex = sex;
+    public Person(Address myAddress, int age, String name, String sex) {
+        this(age, name);
+        this.address = myAddress;
+//        this.name = name;
+//        this.age = age;
+        if (MALE.equals(sex) || FEMALE.equals(sex)) {
+            this.sex = sex;
+        }
+        this.address = new Address("Минск");
+//        while (true) {
+//            System.out.println("asd");
 //        }
-//    }
+    }
 
     public Person(int age, String name) {
         this();
@@ -65,16 +80,22 @@ public class Person {
     }
 
     //в пределах одного пакета или у наследника
-    protected void secureInfo() {
+    private void secureInfo() {
         System.out.println("Hello, my name is " + name + " and I'm " + age + " years old");
+    }
+
+    public String simpleInfo() {
+//        random.nextInt(20)+1;
+        return "Person{" +
+                "address" + address +
+                ", age=" + random.nextInt(20) + 1 +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "address=" + address +
-                ", age=" + age +
-                ", name='" + name + '\'' +
+        return simpleInfo() + "\b\b\b" +
                 ", sex='" + sex + '\'' +
                 '}';
     }
