@@ -18,7 +18,8 @@ public class Main {
 
         reader1.takeBook(5);
         System.out.println();
-        reader2.takeBook("Космобиолухи, Громыко", "Java программирование, Шилдт");
+        String[] bookNames = {"Космобиолухи, Громыко", "Java программирование, Шилдт"};
+        reader2.takeBook(bookNames);
         System.out.println();
         reader3.takeBook(book1, book2, book3);
         System.out.println();

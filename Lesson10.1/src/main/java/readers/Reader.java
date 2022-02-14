@@ -18,7 +18,7 @@ public class Reader {
         System.out.println(fullName + " взял " + number + " книги.");
     }
 
-    public void takeBook(String... books) {
+    public void takeBook(String[] books) {
         System.out.println(fullName + " взял следующие книги:");
         for (String book : books) {
             System.out.println(book);

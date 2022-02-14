@@ -15,10 +15,12 @@ public class Main {
                 flowerMarket.getBouquet(LILY, ROSE, ROSE, LILY, LILY),
                 flowerMarket.getBouquet(GERBERA, ROSE, ROSE, ASTER)
         };
+
         for (Bouquet bouquet : bouquets) {
             printInfo(bouquet);
         }
         System.out.printf("Количество проданных цветов %d", flowerMarket.getCountSoldFlowers());
+        //полную выручку
     }
 
     private static void printInfo(Bouquet bouquet) {

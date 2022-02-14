@@ -12,8 +12,8 @@ import static flowers.Constants.flowerNamePriceArray;
  * Магазин по продаже букетов из цветов.
  */
 @Getter
-public class FlowerMarket {
-    //    private int countSoldFlowers;//количество проданных цветов
+public class FlowerMarket implements FlowerMarketAware {
+    //        private int countSoldFlowers;//количество проданных цветов
     private final List<Bouquet> soldBouquets = new ArrayList<>();//проданные букеты
 
     //магазин умеет собирать(получать) букет из цветов
@@ -24,6 +24,7 @@ public class FlowerMarket {
             BigDecimal price = findPriceByFlowerName(flowerName);
             if (price != null) {
                 result[i] = new Flower(flowerName, price);
+//                result[i] = createFlower(flowerName, price);
 //                countSoldFlowers++;
             }
         }

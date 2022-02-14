@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-
+//        Light light1 = new Light();
+//        light1.setBodyType("asdasd");
+//        light1.info();
         Transport light = Light.builder()
                 .power(100)
                 .maxSpeed(150)
@@ -34,7 +36,7 @@ public class Main {
                 .businessClass(true)
                 .build();
 
-        Military military = Military.builder()
+        Transport military = Military.builder()
                 .power(1500)
                 .maxSpeed(750)
                 .weight(7)
@@ -47,8 +49,8 @@ public class Main {
 
         Transport[] transports = {civil, military, light, freight};
 
-        for (Transport transport : transports) {
-            System.out.println(transport);
+        for (Transportable transport : transports) {
+            System.out.println(transport.info());
         }
     }
 }

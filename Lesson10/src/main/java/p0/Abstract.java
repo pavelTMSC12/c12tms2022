@@ -15,6 +15,9 @@ public class Abstract {
         //Вторым важным моментом отличия абстрактных классов от обычных – невозможность создания их экземпляров.
         //Это позволяет дополнительно защитить программу от ее нежелательного использования,
         // когда класс должен браться исключительно в качестве базового и не разрешать создавать свои экземпляры.
+
+        Car toyotaCorolla = new ToyotaCorolla();
+        toyotaCorolla.group();
     }
 }
 
@@ -26,12 +29,26 @@ abstract class Car {
     private String model;//характеристики
 
     //методы абстрактные
-    public abstract void go();
+    abstract void go();
 
-    public abstract void stop();
+    abstract void stop();
 
-    public abstract void draw();
+    abstract void draw();
+
+    abstract boolean check();
+
     //методы обычные
+    void group() {
+        if (check()) {
+            go();
+            stop();
+            draw();
+        }
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 }
 
 /*
@@ -41,6 +58,22 @@ abstract class Car {
   Это часто очень удобно при реализации больших проектов, когда в целом определены информационные потоки
   через абстрактные классы и интерфейсы, а далее, создаются производные классы для их конкретного наполнения, реализации.
  */
-//class ToyotaCorolla extends Car {
-//
-//}
+class ToyotaCorolla extends Car {
+
+    public void go() {
+        System.out.println("go");
+    }
+
+    public void stop() {
+        System.out.println("stop");
+    }
+
+    public void draw() {
+        System.out.println("draw");
+    }
+
+    @Override
+    boolean check() {
+        return 5 > 3;
+    }
+}

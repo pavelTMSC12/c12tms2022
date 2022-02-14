@@ -17,18 +17,18 @@ public class Car {
         this.gasTank = gasTank;
     }
 
-    public boolean checkFuel() {
+    public void startCar() {
+        if (checkFuel()) {
+            engine.engineOn();
+        }
+    }
+
+    private boolean checkFuel() {
         if (gasTank.getFuelQuantity() > 0) {
             return true;
         } else {
             System.out.println("Нет топлива");
-        }
-        return false;
-    }
-
-    public void startCar() {
-        if (checkFuel()) {
-            engine.engineOn();
+            return false;
         }
     }
 

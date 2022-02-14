@@ -7,7 +7,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @ToString(callSuper = true)
 @SuperBuilder
-public class LandTransport extends Transport {//наземный
+public abstract class LandTransport extends Transport {//наземный
     private int wheels; //Количество колёс
     private double fuelConsumption;//Расход топлива(л/100км)
 }
