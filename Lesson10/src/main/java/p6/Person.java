@@ -22,7 +22,14 @@ public class Person {
         System.out.println("static personTest");
     }
 
-    public void info() {
+    public void getRecruit(String name) {
+        Person[] mass = null;
+        for (Person person : mass) {
+            if (person.getSex() == MALE && person.getAge() > 18 && person.getAge() <= 27) {
+
+            }
+        }
+
         System.out.println("Person");
     }
 

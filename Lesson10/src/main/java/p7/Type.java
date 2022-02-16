@@ -4,6 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum Type {
+
     INT(true) {
         @Override
         Object parse(String value) {

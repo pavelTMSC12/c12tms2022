@@ -5,22 +5,35 @@ import lombok.Getter;
 @Getter
 public enum Sex {
 
-    MALE("male"), FEMALE("female");
+    MALE("мужской", 18, 27), TEST, FEMALE("женский", 23, 12);
 
-    private String myName;
+    private String myName;//глобальная переменная
+    private int from;
+    private int to;
 
-    Sex(String myName) {
+
+    Sex(String myName, int from, int to) {
         this.myName = myName;
+        this.from = from;
+        this.to = to;
     }
 
-    public Sex parse(String value) {
-        return Sex.valueOf(value);
+    Sex() {
     }
 
-//    @Override
-//    public String toString() {
-//        return "Sex{" +
-//                "myName='" + myName + '\'' +
-//                '}';
-//    }
+    public static Sex parse(String value) {
+        for (Sex sex : values()) {
+            if (sex.getMyName().equalsIgnoreCase(value)) {
+                return sex;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Sex{" +
+                "myName='" + myName + '\'' +
+                '}';
+    }
 }
