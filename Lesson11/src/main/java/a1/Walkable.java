@@ -1,5 +1,5 @@
 package a1;
 
-public interface IDog {
+public interface Walkable {
     void walk() throws Exception;
 }

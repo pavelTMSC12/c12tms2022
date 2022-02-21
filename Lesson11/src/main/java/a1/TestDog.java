@@ -8,7 +8,7 @@ public class TestDog extends MyDog {
             test();
 
             super.walk();
-        } catch (DogIsNotReadyException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

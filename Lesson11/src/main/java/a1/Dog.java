@@ -30,11 +30,12 @@ public class Dog {
         isMuzzlePutOn = true;
     }
 
-    void walk() throws DogIsNotReadyException {
+    String walk() throws DogIsNotReadyException {
         if (isCollarPutOn && isLeashPutOn && isMuzzlePutOn) {
-            System.out.println("вышли на улицу");
+            return "вышли на улицу";
         } else {
             throw new DogIsNotReadyException("Нельзя идти гулять");
+//            return "";
         }
     }
 

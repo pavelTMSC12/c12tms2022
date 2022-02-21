@@ -32,6 +32,8 @@
         <module>Lesson10.3</module>
         <module>Lesson10hw</module>
         <module>Lesson11</module>
+        <module>Lesson12</module>
+        <module>Lesson12.1</module>
     </modules>
 
     <dependencies>

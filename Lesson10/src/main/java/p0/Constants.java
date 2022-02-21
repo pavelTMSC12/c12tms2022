@@ -6,5 +6,4 @@ import lombok.experimental.UtilityClass;
 public class Constants {
     public static final String TEMP = "sf";
 
-
 }
