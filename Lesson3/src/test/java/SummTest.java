@@ -1,8 +1,10 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SummTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void sum() {
         assertEquals(30, Summ.sum(10, 20));
 

@@ -1,9 +1,12 @@
 package by.teachmeskills.person.shoes;
 
+import lombok.Getter;
+
 import java.math.BigDecimal;
 
-public class Shoes implements IShoes {
-    private BigDecimal price;
+@Getter
+public abstract class Shoes {
+    private final BigDecimal price;
     private boolean isOn;
     private String name;
 
@@ -12,24 +15,5 @@ public class Shoes implements IShoes {
         this.name = name;
     }
 
-    @Override
-    public void putOn() {
-        if (!isOn) {
-            System.out.println("Обувь " + name + " надета");
-            isOn = true;
-        }
-    }
 
-    @Override
-    public void takeOff() {
-        if (isOn) {
-            System.out.println("Обувь " + name + " снята");
-            isOn = false;
-        }
-    }
-
-    @Override
-    public BigDecimal getPrice() {
-        return price;
-    }
 }

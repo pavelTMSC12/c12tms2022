@@ -1,35 +1,15 @@
 package by.teachmeskills.person.jacket;
 
+import by.teachmeskills.person.Clothes;
+
 import java.math.BigDecimal;
 
-public class Jacket implements IJacket {
-    private BigDecimal price;
-    private boolean isOn;
-    private String name;
+import static by.teachmeskills.person.Clothes.Type.JACKET;
 
-    public Jacket(BigDecimal price, String name) {
-        this.price = price;
-        this.name = name;
-    }
 
-    @Override
-    public void putOn() {
-        if (!isOn) {
-            System.out.println("Куртка " + name + " надета");
-            isOn = true;
-        }
-    }
+public class Jacket extends Clothes {
 
-    @Override
-    public void takeOff() {
-        if (isOn) {
-            System.out.println("Куртка " + name + " снята");
-            isOn = false;
-        }
-    }
-
-    @Override
-    public BigDecimal getPrice() {
-        return price;
+    public Jacket(BigDecimal price, Brand brand) {
+        super(price, brand, JACKET);
     }
 }
