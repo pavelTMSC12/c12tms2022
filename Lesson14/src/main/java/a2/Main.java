@@ -11,13 +11,14 @@ import com.tms.io.output.TmsWriter;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 public class Main {
-    private static final String RESOURCE_DIR = "Lesson13/src/main/resources/";
+    private static final String RESOURCE_DIR = "Lesson14/src/main/resources/";
     private static final String INPUT_FILE = RESOURCE_DIR + "input.txt";
     private static final String OUTPUT_FILE = RESOURCE_DIR + "output.txt";
     private static final String WOLF_FILE = RESOURCE_DIR + "wolf.jpg";
@@ -34,14 +35,15 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
         try {
+            String[] split = "111.e..rrre..ttt".split("\\.|e");
+            System.out.println(Arrays.toString(split));
 //            doWork();
 //        downloadFromInternet();
 //        readWriteBinaryObject(person);
 //        workingWithFiles();
 //        readWriteToJSON(Arrays.asList(person, person));
-            workingWithArchives();
+//            workingWithArchives();
         } catch (Exception exception) {
             System.out.println("Unexpected error " + exception);
         }
@@ -99,9 +101,13 @@ public class Main {
 
     public static void readWriteBinaryObject(Person p) throws IOException, ClassNotFoundException {
         System.out.println("BINARY OBJECT");
-        ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream("Lesson13/src/main/resources/person.data"));
+        ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream("Lesson14/src/main/resources/person.data"));
         stream.writeObject(p);
-        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("Lesson13/src/main/resources/person.data"));
+        stream.writeObject(p);
+        stream.writeObject(p);
+        ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("Lesson14/src/main/resources/person.data"));
+        System.out.println(inputStream.readObject());
+        System.out.println(inputStream.readObject());
         System.out.println(inputStream.readObject());
     }
 
@@ -118,8 +124,8 @@ public class Main {
         System.out.println("JSON");
 //        ObjectMapper mapper = new ObjectMapper();
 //        mapper.configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true);
-        File file = new File("Lesson13/src/main/resources/Person.json");
-
+//        File file = new File("Lesson14/src/main/resources/Person.json");
+//
 //        mapper.writeValue(file, personList);
 //        personList = mapper.readValue(file, List.class);
         System.out.println(personList.toString());
@@ -128,6 +134,7 @@ public class Main {
     public static void workingWithFiles() throws IOException {
         //create in memory
         File file = new File("");
+
         System.out.println(file.getAbsolutePath());
 
         file = new File("/Users/pavel");
@@ -160,7 +167,7 @@ public class Main {
         boolean result = file.createNewFile();
         System.out.println(result ? "File was created" : "File wasn't created");
         System.out.println("File " + file.getAbsolutePath() + " exists : " + file.exists());
-        file = new File("/Users/pavel/Work/TeachMeSkills/git/tmsС092021/Lesson13/src/main/resources/111.txt");
+        file = new File("Lesson13/src/main/resources/111.txt");
         boolean newFile = file.createNewFile();
         System.out.println("ceate newFile " + newFile);
         result = file.delete();

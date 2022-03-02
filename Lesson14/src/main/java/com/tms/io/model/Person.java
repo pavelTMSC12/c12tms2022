@@ -1,8 +1,6 @@
 package com.tms.io.model;
 
-import java.io.Serializable;
-
-public class Person implements Cloneable, Serializable {
+public class Person implements Cloneable {
     public static final String MALE = "male";
     public static final String FEMALE = "female";
 

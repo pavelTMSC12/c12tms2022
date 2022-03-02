@@ -10,13 +10,15 @@ public class TmsScannerFileReader implements TmsReader {
     private final Scanner scanner;
     private final InputStream stream;
 
-    public TmsScannerFileReader(String inputFileName) throws FileNotFoundException {
+    public TmsScannerFileReader(String inputFileName) throws IOException {
         this.inputFileName = inputFileName;
         stream = getClass().getClassLoader().getResourceAsStream(inputFileName);
         if (stream == null) {
             throw new FileNotFoundException();
         }
         scanner = new Scanner(stream);
+
+//        List<String> stringList = FileUtils.readLines(new File(inputFileName), "UTF-8");
     }
 
     @Override
