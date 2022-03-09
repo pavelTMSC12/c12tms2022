@@ -25,6 +25,7 @@ public class Practice {
         {
             Set<String> objects = new LinkedHashSet<>();
             objects.add("1000");
+            objects.add(null);
             String obg = create();
             if (obg != null) {
                 objects.add(obg);

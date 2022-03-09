@@ -5,10 +5,12 @@ package p2;
  *
  * @param <T> - объект неизвестного класса
  */
-public class Generic<T> {
+public class Generic<T, V> {
     private T value;// можем объявить как глобальную переменную
+    private V v;
 
-    public Generic() {
+    public <T extends Number, V extends Number> Generic(T t, V v1) {
+//        this.v = v1;
     }
 
     public Generic(T value) { //конструктор

@@ -9,7 +9,8 @@ public class Practice {
         objectObjectHashMap.put("a", 1);
         objectObjectHashMap.put("b", 1445);
         objectObjectHashMap.put("c", 34);
-//
+        objectObjectHashMap.put(null, null);
+
         objectObjectHashMap.put("a", 23);
         System.out.println(objectObjectHashMap.get("a"));
         Integer nnn = objectObjectHashMap.get("nnn");
@@ -23,6 +24,7 @@ public class Practice {
         findValue(new ArrayList<>(values));
 //
 //        for (Person p: persons)
+
 
         for (Map.Entry<String, Integer> stringIntegerEntry : objectObjectHashMap.entrySet()) {
             System.out.println(stringIntegerEntry.getKey() + " " + stringIntegerEntry.getValue());

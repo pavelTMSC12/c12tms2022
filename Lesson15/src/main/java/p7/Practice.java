@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Practice {
     public static void main(String[] args) {
-        Map<Key, Integer> map = new TreeMap<>();
+        Map<Key, Integer> map = new HashMap<>();
         map.put(new Key("vishal"), 20);
         map.put(new Key("sachin"), 30);
         map.put(new Key("vaibhav"), 40);
