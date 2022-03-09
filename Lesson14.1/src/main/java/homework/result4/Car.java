@@ -1,19 +1,26 @@
-package hw5;
+package homework.result4;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Car {
-    @JsonProperty("brand_name")
+public class Car implements Serializable {
+
     private String brand;
-    @JsonProperty("max_speed")
     private int maxSpeed;
     private int price;
+
+    public Car(String brand, int maxSpeed, int price) {
+        this.brand = brand;
+        this.maxSpeed = maxSpeed;
+        this.price = price;
+    }
+
+    public Car() {
+    }
 
     @Override
     public String toString() {
