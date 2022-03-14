@@ -1,5 +1,14 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegExp {
-   /*
+    public static void main(String[] args) {
+        print("cab, ccab, cccab");
+        print2();
+
+    }
+
+    /*
      * По строкам дополнительная!
      *  1) Даны строки разной длины c четным числом символов(казаки, просмотреть и так далее),
      *  необходимо вернуть ее два средних знака.
@@ -11,7 +20,31 @@ public class RegExp {
      * cab
      * ccab
      * cccab
-     *
+     */
+    public static void print(String str) {
+        Pattern pattern = Pattern.compile("c+ab");
+        Matcher matcher = pattern.matcher(str);
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+        str = "sda1sda111sda1sda111";
+        System.out.println(str.matches("[a-z15]{4,20}"));
+    }
+
+    public static void print2() {
+        String str = "One two three раз два три one1 two2 123 ";
+        System.out.println(str.split("(\\s+)|([а-я]+)|([a-z]*\\d+)").length);
+    }
+
+    public static boolean validate(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("str can not be null");
+        }
+        return str.matches("[a-z15]{4,20}");
+    }
+
+     /*
+     //Java\s+\d+
      * 3) Дана строка "Versions: Java  5, Java 6, Java   7, Java 8, Java 12."  Найти все подстроки "Java X", где X - число и распечатать их.
      *
      * 4*)со звездочкой! Предложение состоит из нескольких слов, разделенных пробелами. Например: "One two three раз два три one1 two2 123 ".
@@ -28,7 +61,7 @@ public class RegExp {
      *  PS: Кто не сможет осилить регулярное выражение, то сделайте как сможете!
      *
      *  5*)со звездочкой! В метод на вход приходит строка
-     *
+     * [a-z15]{4,20}
      *  public static boolean validate(String str) {
             return false;
         }
