@@ -15,9 +15,11 @@ public class Practice3 {
             }
         }
 
-        Stream<Phone> phoneStream = Stream.of(new Phone("iPhone 6 S", 54000, null), new Phone("Lumia 950", 45000, null),
+        Stream<Phone> phoneStream = Stream.of(new Phone("iPhone 6 S", 54000, null),
+                new Phone("Lumia 950", 45000, null),
                 new Phone("Samsung Galaxy S 6", 40000, null));
-        phoneStream.filter(p -> p.getPrice() < 50000).forEach(p -> System.out.println(p.getName()));
+        phoneStream.filter(p -> p.getPrice() < 50000)
+                .forEach(p -> System.out.println(p.getName()));
 
         //Отображение. Метод map
         //Отображение или маппинг позволяет задать функцию преобразования одного объекта в другой,
@@ -32,12 +34,12 @@ public class Practice3 {
         Плоское отображение выполняется тогда, когда из одного элемента нужно получить несколько. Данную операцию выполняет метод flatMap:
          */
         phoneStream
-//                .flatMap(p->Stream.of(
-//                        String.format("название: %s  цена без скидки: %d", p.getName(), p.getPrice()),
-//                        String.format("название: %s  цена со скидкой: %d", p.getName(), p.getPrice() - (int)(p.getPrice()*0.1))
-//                ))
-                .flatMap(phone -> phone.getPersons().stream())
-                .map(person -> person.getName())
+                .flatMap(p -> Stream.of(
+                        String.format("название: %s  цена без скидки: %d", p.getName(), p.getPrice()),
+                        String.format("название: %s  цена со скидкой: %d", p.getName(), p.getPrice() - (int) (p.getPrice() * 0.1))
+                ))
+//                .flatMap(phone -> phone.getPersons().stream())
+//                .map(person -> person.getName())
                 .forEach(s -> System.out.println(s));
 //        for (Phone phone : phoneStream.collect(Collectors.toList())) {
 //            for (Person person : phone.getPersons()) {

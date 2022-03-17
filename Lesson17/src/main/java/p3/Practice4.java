@@ -15,7 +15,7 @@ public class Practice4 {
 
         phones.stream()
                 .filter(p -> p.length() < 12)
-                .sorted() // сортировка по возрастанию
+                .sorted(Comparator.reverseOrder()) // сортировка по возрастанию
                 .forEach(s -> System.out.println(s));
 
 
@@ -25,8 +25,8 @@ public class Practice4 {
 //                new Phone("iPhone 8", "Apple", 450),
 //                new Phone("Nokia 9", "HMD Global", 150),
 //                new Phone("Galaxy S9", "Samsung", 300));
-
-//        phoneStream.sorted(new PhoneComparator())
+//
+//        phoneStream.sorted((a, b) -> a.getName().compareToIgnoreCase(b.getName()))
 //                .forEach(p -> System.out.printf("%s (%s) - %d \n",
 //                        p.getName(), p.getCompany(), p.getPrice()));
 

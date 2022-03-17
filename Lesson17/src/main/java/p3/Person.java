@@ -16,6 +16,7 @@ import java.util.List;
 public class Person {
     public static final String MALE = "male";
     public static final String FEMALE = "female";
+    private long id;
     private String name;
     private Integer age;
     private String sex = FEMALE;

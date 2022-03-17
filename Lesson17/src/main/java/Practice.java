@@ -14,11 +14,12 @@ public class Practice {
 
 
         Predicate<String> containsA = t -> t.contains("A");
+        Predicate<String> notContainsA = containsA.negate();
+
         Predicate<String> containsB = t -> t.contains("B");
         System.out.println(containsA.and(containsB).test("ABCD"));
 
         Map<Integer, String> collect = IntStream.of(1, 2, 3, 4, 1011)
-                .filter(value -> value < 100)
                 .boxed()
                 .collect(toMap(integer -> integer, Object::toString));
 
@@ -33,23 +34,28 @@ public class Practice {
         personList.add(new Person("Alex", null, "male"));
         personList.add(new Person("Alex", 9, "male"));
 
+        Map<Long, Person> map = personList.stream()
+                .collect(toMap(person -> person.getId(), person -> person));
+        Person person2 = map.get(1);
+
         personList.stream()
-                .flatMap(person -> person.getStringList().stream())
-                .anyMatch(s -> true);
+//                .flatMap(person -> person.getStringList().stream())
+                .allMatch(s -> s.getName().equals("Александр"));
 //                .forEach(System.out::print);
 
 
 //        Stream<String> distinct = personList.stream()
 //                .map(p3.Person::getName)
 //                .sorted()
-//                .distinct();
+//                .distinct()
+//                .collect(Collectors.toList())
 //        distinct.collect(Collectors.toList());
 
-//        Optional<Integer> maxPersonAge = findMaxPersonAge(personList);
-//        if (maxPersonAge.isPresent()) {
-//            Integer maxAge = maxPersonAge.get();
-//            System.out.println(maxAge);
-//        }
+        Optional<Integer> maxPersonAge = findMaxPersonAge(personList);
+        if (maxPersonAge.isPresent()) {
+            Integer maxAge = maxPersonAge.get();
+            System.out.println(maxAge);
+        }
 //        Integer maxPersonAge = findMaxPersonAge(personList);
 //        if (maxPersonAge != null) {
 //            System.out.println(maxPersonAge.hashCode());
@@ -106,14 +112,20 @@ public class Practice {
     }
 
 
-    private static Integer getPersonAges(List<Person> personList) {
-        return personList.stream()
+    private static Integer getPersonAges(List<Person> personList, Person defaultPerson) {
+        Optional<Integer> max = personList.stream()
                 .map(Person::getAge)
                 .filter(Objects::nonNull)
                 .filter(age -> age > 10)
-                .max((o1, o2) -> o1.compareTo(o2))
-                .orElseThrow(() -> new RuntimeException("dasfdasf"));
-//                .orElseGet(Collections::emptyList);
+                .max((o1, o2) -> o1.compareTo(o2));
+        max.ifPresentOrElse(System.out::println, () -> {
+            System.out.println("null");
+        });
+
+        return max;
+//                .orElseGet(()->defaultPerson.getAge());
+//                .orElseThrow(() -> new RuntimeException("dasfdasf"));
+//                ;
 
 
 //        for (p3.Person person : personList) {

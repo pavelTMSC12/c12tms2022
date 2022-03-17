@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.function.*;
 
@@ -21,10 +24,32 @@ public class Practice1 {
     BinaryOperator<T>
      */
 
+    private static String findName(String[] args) {
+        for (String arg : args) {
+            if (arg.equalsIgnoreCase("Александр")) {
+                return arg;
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
-//        List<String> strings = Arrays.asList(args).stream()
-//                .filter(s -> person.getName().equals("Александр"))
-//                .forEach(s -> System.out.printf(s,12));
+        List<String> args1 = List.of(args);
+        args1.add("12");
+        System.out.println(args1);
+        List<String> stringList = Arrays.asList(args);
+        Optional<String> nameOptional = Arrays.asList(args).stream()
+                .filter(s -> s.equals("Александр"))
+                .findFirst();
+//        if (nameOptional.isPresent()) {
+        String name = nameOptional.get();
+//        }
+
+        String name1 = findName(args);
+//        if (name1 != null) {
+//        String[] split = name1.split(".");
+//        }
+
         //Predicate
         //проверяет соблюдение некоторого условия. Если оно соблюдается, то возвращается значение true.
         // В качестве параметра лямбда-выражение принимает объект типа T
@@ -44,8 +69,8 @@ public class Practice1 {
 
             Scanner in = new Scanner(System.in);
             System.out.println("Введите имя: ");
-            String name = in.nextLine();
-            return new User(name);
+            String name3 = in.nextLine();
+            return new User(name3);
         };
 
         User user1 = userFactory.get();

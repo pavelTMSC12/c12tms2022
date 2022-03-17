@@ -42,6 +42,9 @@
         <module>Lesson16</module>
         <module>Lesson17</module>
         <module>Lessson19</module>
+        <module>Lesson18</module>
+        <module>Lesson18.1</module>
+        <module>Lesson18.2</module>
     </modules>
 
     <dependencies>

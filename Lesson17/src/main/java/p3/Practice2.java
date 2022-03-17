@@ -20,14 +20,21 @@ public class Practice2 {
 
         Collections.addAll(cities, "Париж", "Лондон", "Мадрид");
         cities.stream() // получаем поток
-                .filter(s -> s.length() == 6) // применяем фильтрацию по длине строки
-                .forEach(s -> System.out.println(s)); // выводим отфильтрованные строки на консоль
+                .filter(city -> city.length() == 6) // применяем фильтрацию по длине строки
+                .map(s -> s.charAt(0))
+                .forEach(s -> {
+                    System.out.println(s);
+                    System.out.println(s);
+                    System.out.println(s);
+                    System.out.println(s);
+                }); // выводим отфильтрованные строки на консоль
 
 //        Фактически жизненный цикл потока проходит следующие три стадии:
 //        - Создание потока
 //        - Применение к потоку ряда промежуточных операций
 //        - Применение к потоку терминальной операции и получение результата
         {
+
             Stream<String> citiesStream = Arrays.stream(new String[]{"Париж", "Лондон", "Мадрид"});
             citiesStream.forEach(s -> System.out.println(s)); // выводим все элементы массива
 
