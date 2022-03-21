@@ -3,6 +3,8 @@ package com.tms.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Arrays;
+
 import static com.tms.utils.Constants.*;
 
 @Getter
@@ -18,13 +20,22 @@ public class PersonRegistry {
         Person[] result = new Person[persons.length];
 //        ArrayList<Person> result = new ArrayList<>();
 //        for (Person person : persons) {
-        for (int i = 0; i < persons.length; i++) {
-            Person person = persons[i];
-            if (checkRecruits(person)) {
-                result[i] = person;
-            }
-        }
-        return result;
+
+        return Arrays.stream(persons).
+                filter(this::checkRecruits)
+                .toArray(Person[]::new);
+
+
+//        return collect.toArray(new Person[0]);
+
+
+//        for (int i = 0; i < persons.length; i++) {
+//            Person person = persons[i];
+//            if (checkRecruits(person)) {
+//                result[i] = person;
+//            }
+//        }
+//        return result;
     }
 
     private boolean checkRecruits(Person person) {
