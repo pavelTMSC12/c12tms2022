@@ -36,13 +36,13 @@ public class Main {
 
 //        infiniteThreadExample();
 
-        raceConditionExample();
+//        raceConditionExample();
 
 //        daemonExample();
 
 //        producerConsumerExample();
 
-//        producerConsumerExampleV2();
+        producerConsumerExampleV2();
     }
 
 
